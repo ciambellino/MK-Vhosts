@@ -1,2 +1,101 @@
-MK-Vhosts
+
+# MK-Vhosts
+# By Ciambellino
+#
+# I created this script because I'm lazy, and
+# I did not want to do all these operations by hand.
+#
+# I know that I can write better code, but as I said I'm lazy.
+# 
+
+IMPORTANT: This script run succesfully in RedHat based distro only 
+(tested on CentOS, Red-Hat Enterpise, OpenSuSe)
+
+
+
+This script allows you to create a complete Apache Virtual Host and statistics with Awstats in a few seconds.
+
+-------------- ENVIROMENT----------------------
+
+The environment for the web site will be created as follows:
+
+/USER/DIR/                                                                 
+     |                                                                        
+     |-- sitename/                                                          
+         |-- www/                                                            
+         |-- perl/                                                          
+         |-- python/                                                         
+         |-- logs/                                                            
+         |-- awstats/                                                           
+         |-- error/                                                          
+         |-- etc/         
+
+www 	Root Directory
+perl 	Aliases for perl scripts
+python  Aliases for Python scripts
+logs 	Access/Error logs for Virtual Host [NCSA combined/XLF/ELF log format] (RO)
+awstats cache for statistics (RO)
+error 	error page for customizations
+etc 	awstats user/password (RW), 
+     	htaccess template(RO), 
+     	script logrotate(RO), 
+     	htaccess file for password(RW)
+
+
+
+---------------- SCRIPT AUTOMATION --------------------------
+
+1- Make enviroment dir
+2- The scripts set system user/password for access in FTP. 
+3- Set Awstats configuration for the Virtual Host with password protected access. 
+   The credentials are the same as the FTP.
+4- Make file configuration for Virtual Host and puts it in to the folder of Apache that will include.
+5- Make script for logrotate and set it in cron root
+6- Set user quota (system quota must be configured)
+7- Set appropriate file permissions
+8- Sets the date for the hosting of one year from the creation.
+   Optionally in conjunction with the script expire.php can automatically alert the expiry of the web 	 space by sendin
+g an email to the addresses registered.
+   For sending email in my system i configure the SMTP with authentication, and i use PEAR Net_SMTP    
+   Class. The script expire.php use this for sending email. 
+9- Make available information of the Virtual Hosts in a file  
+10- Make alias for phpMyAdmin in /myadmin (phpMyAdmin must be installed in Apache RootDirectory)
+
+
+
+
+------------------ OUTPUT INFORMATION ------------------
+
+
+Populates a file with inside information for each Virtual Host that was created like this:
+
+==================================================
+ FTP access 
+ date: mar mag 10 18:30:10 CEST 2011 
+ Server Hosting: ciambellino.it 
+ Hosting expire date: 20120510 
+==================================================
+Site:			www.ciambellino.it
+alias:			ciambellino.it
+User:			ciambellino
+Passwd:			mypassword
+Webmaster Mail:		ciambellino@ciambellino.it
+Content Admin:		ciambellino@ciambellino.it
+Quota:            	90MB-100MB
+
+==================================================
+ Access to statistics by Awstats 
+==================================================
+ http://www.ciambellino.it/awstats/awstats.pl 
+ username and password are the same as FTP 
+
+==================================================
+PHP Version
+==================================================
+PHP 5.3.6 (cli) (built: Mar 17 2011 19:14:03) 
+Copyright (c) 1997-2011 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2011 
+Zend Technologies
+
+==================================================
 
