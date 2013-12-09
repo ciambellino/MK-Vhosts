@@ -29,13 +29,13 @@ The environment for the web site will be created as follows:
          |-- error/                                                          
          |-- etc/         
 
-www 	Root Directory
+www 	     Root Directory
 perl 	Aliases for perl scripts
-python  Aliases for Python scripts
+python    Aliases for Python scripts
 logs 	Access/Error logs for Virtual Host [NCSA combined/XLF/ELF log format] (RO)
-awstats cache for statistics (RO)
+          awstats cache for statistics (RO)
 error 	error page for customizations
-etc 	awstats user/password (RW), 
+etc 	     awstats user/password (RW), 
      	htaccess template(RO), 
      	script logrotate(RO), 
      	htaccess file for password(RW)
@@ -54,8 +54,7 @@ etc 	awstats user/password (RW),
 7- Set appropriate file permissions
 8- Sets the date for the hosting of one year from the creation.
 <<<<<<< HEAD
-   Optionally in conjunction with the script expire.php can automatically alert the expiry of the web 	 space by sendin
-g an email to the addresses registered.
+   Optionally in conjunction with the script expire.php can automatically alert the expiry of the web space by sending an email to the addresses registered.
 =======
    Optionally in conjunction with the script expire.php can automatically alert the expiry of the web 	 space by sendin
 g an email to the addresses registered.
@@ -83,7 +82,7 @@ Site:			www.ciambellino.it
 alias:			ciambellino.it
 User:			ciambellino
 Passwd:			mypassword
-Webmaster Mail:		ciambellino@ciambellino.it
+Webmaster Mail:	ciambellino@ciambellino.it
 Content Admin:		ciambellino@ciambellino.it
 Quota:            	90MB-100MB
 
